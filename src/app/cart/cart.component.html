@@ -1,0 +1,32 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th>price</th>
+        <th>qty</th>
+        <th>remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts">
+        <td scope="row">{{ cart.id }}</td>
+        <td>{{ cart.name }}</td>
+        <td>{{ cart.price }}</td>
+        <td>{{ cart.qty }} * {{ cart.price }} = {{ cart.qty * cart.price }}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="removeItem(cart.id)">remove</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+          <td>
+            total : {{ total() }}
+          </td>
+        </tr>
+    </tfoot>
+  </table>
+
+</div>
